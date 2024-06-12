@@ -9,3 +9,10 @@ function switchView(newView) {
 }
 
 switchView("#homepage")
+
+
+function gameClicked(event) {
+
+    // window.location.href = 
+
+}
