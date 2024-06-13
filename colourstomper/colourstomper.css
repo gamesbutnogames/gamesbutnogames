@@ -1,0 +1,204 @@
+:root {
+    --square-size: 80px;
+}
+
+body {
+    background-color: rgb(211, 211, 211);
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    align-items: center;
+    /* justify-content: baseline; */
+    height: 100%;
+    overflow: hidden;
+}
+
+#colour-picker {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1em;
+    gap: 1em;
+    flex-wrap: wrap;
+}
+
+.colour-button {
+    display: flex;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    background-color: red;
+    border: solid black 5px;
+    transition: filter 0.1s;
+    transition: transform 0.1s;
+
+}
+
+.colour-button:hover {
+    transform: scale(1.2);
+    filter: brightness(80%);
+}
+
+.colour-button.clicked {
+    filter: brightness(60%) !important;
+    transform: scale(1) !important;
+}
+
+#board {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    gap: 2px;
+}
+
+.square {
+    display: flex;
+    border: solid black 1px;
+    width: var(--square-size);
+    height: var(--square-size);
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.1s;
+}
+
+.square.available {
+    background-color: rgba(178, 255, 178, 0.63);
+}
+
+.ball {
+    display: flex;
+    border-radius: 50%;
+    width: 50%;
+    height: 50%;
+    background-color: red;
+    border: solid black 5px;
+    transition: transform 0.1s;
+    transition: filter 0.1s;
+    transition: background-color 0.3s;
+    transition: border 0.2s;
+    pointer-events: none;
+}
+
+.ball.placed {
+    transform: scale(0);
+    animation: placed 0.2s;
+    animation-fill-mode: forwards;
+
+}
+
+@keyframes placed {
+    0% {transform: scale(0)}
+    100% {transform: scale(1)}
+}
+
+.empty {
+    transform: scale(0.8);
+    border: solid black 1px;
+    background-color: rgba(255, 255, 255, 0) !important;
+}
+
+.square.available:hover .ball {
+    transition: transform 0.2s;
+    transform: scale(1.2);
+}
+
+
+.stomper {
+    position: absolute;
+    display: flex;
+    background-color: rgb(255, 255, 158);
+    width: calc(0.75*var(--square-size));
+    height: calc(0.75*var(--square-size));
+
+    transform: translate(calc(0.075*var(--square-size)), calc(0.075*var(--square-size)));
+
+    border: solid black 5px;
+    border-radius: 15px;
+    align-items: center;
+    justify-content: center;
+    top: 0;
+    left: 0;
+    transition: top 0.2s, left 0.2s;
+
+}
+
+.stomper.current {
+    animation: throb 1.4s;
+    animation-iteration-count: infinite;
+
+}
+
+@keyframes throb {
+    0% {filter: brightness(100%);}
+    50% {filter: brightness(60%);}
+    100% {filter: brightness(100%);}
+
+}
+
+
+
+.stomperball {
+    display: flex;
+    border-radius: 50%;
+    width: 35%;
+    height: 35%;
+    background-color: red;
+    border: solid black 5px;
+    pointer-events: none;
+}
+
+#game-over {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#message {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+#winner {
+    display: flex;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    background-color: red;
+    border: solid black 5px;
+    margin-left: 10px;
+    margin-right: 10px;
+
+}
+
+
+#restart {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(255, 92, 92);
+    color: white;
+    border-radius: 10px;
+    padding: 0.2em;
+    font-size: 2.2em;
+}
+
+#restart:hover {
+    filter: brightness(80%);
+}
+
+@media only screen and (max-width: 800px) {
+    :root {
+        --square-size: 50px;
+    }
+    
+}
