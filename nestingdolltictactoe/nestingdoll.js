@@ -47,17 +47,29 @@ function createPiecesForColour(colour) {
 }
 
 function createPiece(colour, size, space=null) {
+
     let piece = $(`<div class="piece"></div>`)
-    piece.addClass(size)
-    piece.addClass(colour)
+
+    piece.data("space", space)
     piece.data("colour", colour)
     piece.data("size", size)
-    piece.data("space", space)
+
+    piece.addClass(size)
+
     movePiece(piece, space)
     let moveInterval = setInterval(() => {
         movePiece(piece, piece.data("space"))
     }, 100)
     piece.data("moveInterval", moveInterval)
+
+    piece.click(pieceClicked)
+
+    let circle = $(`<div class="circle"></div>`)
+    circle.addClass(size)
+    circle.addClass(colour)
+
+
+    piece.append(circle)
 
     return piece
 
@@ -79,6 +91,11 @@ function squareClicked(event) {
     // $("#board").append(piece)
 
 
+}
+
+function pieceClicked(event) {
+    let piece = $(event.target)
+    console.log(piece.data("size"))
 }
 
 $(() => {
