@@ -32,9 +32,10 @@ function createBoard(_x, _y) {
             row.append(square)
 
             square.click(squareClicked)
+
             square.hover(() => {
 
-                if (square.data("piece") && gameStarted) {
+                if (square.data("piece") && gameStarted && canFlip) {
                     square.find(".flip-icon").addClass("hover")
                 }
 
@@ -58,11 +59,11 @@ function squareClicked(event) {
 
     let square = $(event.target)
 
-    if (square.data("piece")) {
+    if (square.data("piece") && canFlip) {
         flipPiece(square.data("piece"))
         nextTurn()
         return
-    } else if (nextPiece) {
+    } else if (nextPiece && !square.data("piece")) {
         movePiece(nextPiece, square)
         nextPiece.data("on-board", true)
         nextPiece = null
@@ -163,6 +164,7 @@ function nextTurn() {
 
     if (count >= 18) {
         $("#next-piece").hide()
+        canFlip = true
     } else if (!nextPiece) {
         createNextPiece()
     }
@@ -363,22 +365,6 @@ function restart() {
 
     createBoard(6, 3)
 
-    // for (s of $("#board").find(".square")) {
-    //     let square = $(s)
-
-    //     square.removeClass("win")
-
-    //     if (square.data("piece")) {
-    //         square.data("piece").remove()
-    //         square.data("piece", null)
-    //     }
-
-    // }
-
-    // $("#board").find(".square")
-
-    // updatePairs()
-
     $(`#win-cross`).hide()
     $(`#win-circle`).hide()
     $(`#win-message`).hide()
@@ -389,6 +375,7 @@ function restart() {
     gameStarted = true
     currentColour = "red"
     nextPiece = null
+    canFlip = false
     createNextPiece()
 
 }
@@ -406,6 +393,7 @@ function highlightWin(pairs) {
 var currentColour = "red"
 var nextPiece = null
 var gameStarted = true
+var canFlip = false
 
 $(`#win-cross`).hide()
 $(`#win-circle`).hide()
