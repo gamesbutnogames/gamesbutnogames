@@ -1,50 +1,174 @@
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css");
+
 :root {
-    --square-size: 80px;
+    --square-height: 120px;
+    --square-width: 60px;
 }
 
 body {
     background-color: rgb(231, 231, 231);
     display: flex;
     flex-direction: column;
-    gap: 1em;
+    gap: 2em;
     align-items: center;
     /* justify-content: baseline; */
     height: 100%;
     overflow: hidden;
 }
 
+#game {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1em;
+}
+
 
 #board {
     display: flex;
     flex-direction: column;
-    gap: 2px;
+    /* gap: 2px; */
 }
 
-.row {
+#next-piece {
     display: flex;
-    flex-direction: row;
-    gap: 2px;
+    /* border: solid black 1px; */
+    /* width: var(--square-size); */
+    /* height: var(--square-size); */
+    flex-direction: column;
+    align-self: center;
+    align-items: center;
+    justify-content: center;
+    gap: 1em;
+    
 }
 
-.square {
+#next-piece-square {
     display: flex;
-    border: solid black 1px;
-    width: var(--square-size);
-    height: var(--square-size);
+    /* border: solid black 1px; */
+    width: var(--square-width);
+    height: var(--square-height);
+    align-self: center;
     align-items: center;
     justify-content: center;
     transition: background-color 0.1s;
 }
 
-.piece {
+#flip {
+    font-size: 30px;
+    width: 120%;
     display: flex;
-    height: calc(0.5*var(--square-size));
-    width: calc(0.5*var(--square-size));
-    border-color: red;
-    border-style: solid;
-    border-width: 10px 0px 0px 10px;
+    flex-direction: row;
+    /* background-color: rgb(255, 179, 179); */
+    background-color: rgb(255, 92, 92);;
+    border-radius: 10px;
+    padding: 10px;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+#flip:hover {
+    filter: brightness(80%);
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    /* gap: 2px; */
+}
+
+.square {
+    display: flex;
+    border: solid black 1px;
+    width: var(--square-width);
+    height: var(--square-height);
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.1s;
+    padding: 0;
+}
+
+.square:hover {
+    background-color: rgba(0, 0, 0, 0.322);
+}
+
+.square.line {
+    background-color: rgb(255, 150, 150);
+}
+
+.square.win {
+    background-color: rgb(132, 255, 132);
+}
+
+.piece {
+    position: absolute;
+    display: flex;
+    height: calc(0.75*var(--square-height));
+    width: auto;
     transform-origin: center;
-    transform: rotate(-45deg);
+    transition: transform 0.2s, left 0.2s, top 0.2s;
+    pointer-events: none;
+}
 
+.piece.flipped {
+    transform: scaleX(-1);
+}
 
+.flip-icon {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+    background-color: rgba(0, 0, 0, 0.219);
+    filter: opacity(0%);
+    z-index: 100;
+    font-size: 30px;
+    color: white;
+    transition: filter 0.1s;
+}
+
+.flip-icon.hover {
+    filter: opacity(100%);
+}
+
+#win-message {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    font-size: 20px;
+}
+
+.win-icon {
+    display: flex;
+    flex-direction: row;
+    gap: 1px;
+    align-items: center;
+    justify-content: center;
+}
+
+.win-icon-piece {
+    width: calc(0.5*var(--square-width));
+    height: calc(0.5*var(--square-height));
+}
+
+#restart {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(255, 92, 92);
+    color: white;
+    border-radius: 10px;
+    padding: 10px;
+    font-size: 2em;
+}
+
+#restart:hover {
+    filter: brightness(80%);
 }
