@@ -20,6 +20,8 @@ body {
     flex-direction: row;
     width: 100%;
     gap: 1em;
+    align-items: center;
+    justify-content: center;
 }
 
 .gamecard {
@@ -31,7 +33,7 @@ body {
     flex-direction: column;
     background-color: white;
     align-items: center;
-    width: 100%;
+    width: 25%;
     border-radius: 0.5em;
     gap: 1em;
     padding-bottom: 1em;
@@ -43,6 +45,6 @@ body {
 }
 
 .game-icon {
-    width: 8em;
+    /* width: 8em; */
     height: 8em;
 }
