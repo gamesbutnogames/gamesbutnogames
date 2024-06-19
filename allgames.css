@@ -1,0 +1,26 @@
+#home-bacon {
+    width: 50px;
+    height: 50px;
+}
+
+#home {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    left: 10px;
+    top: 10px;
+    text-decoration: none;
+    color: black;
+    text-align: center;
+    border: 2px solid black;
+    padding: 4px;
+    gap: 5px;
+    background-color: white;
+
+}
+
+#home:hover {
+    filter: brightness(80%);
+}
