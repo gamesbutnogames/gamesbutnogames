@@ -191,6 +191,7 @@ function checkWinForColour(colour) {
         let top = square.data("data").pieces.at(-1)
 
         if ($(top).data("colour") === colour) {
+            console.log($(top).data("colour"))
 
             let x = square.data("x")
             let y = square.data("y")
