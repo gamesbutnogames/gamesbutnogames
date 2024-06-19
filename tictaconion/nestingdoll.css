@@ -93,6 +93,9 @@ body {
     z-index: 52;
 }
 
+.piece.debug {
+    background-color: blue;
+}
 
 
 .circle {

@@ -4,6 +4,8 @@ var sizes = {
     "large":2,
 }
 
+var stacks = {}
+
 
 function createBoard(_x, _y) {
 
@@ -14,16 +16,18 @@ function createBoard(_x, _y) {
 
         $("#board").append(row)
 
+        stacks[y] = {}
+
         for (let x = 0; x < _x; x++) {
             
             let square = $(`<div class="square"></div>`)
             square.data("x", x)
             square.data("y", y)
-            square.data("data", {"pieces":[]})
+            stacks[y][x] = []
 
             row.append(square)
 
-            square.click(squareClicked)
+            square.on("click", squareClicked)
 
         }
 
@@ -43,7 +47,7 @@ function createPiecesForColour(colour) {
     for (let n = 0; n < 4; n++) {
 
         let holder = $(`<div class="piece-rack"></div>`)
-        holder.data("data", {"pieces":[]})
+
         $(`#${colour}-holder`).append(holder)
 
         holder.append(createPiece(colour, "small", holder))
@@ -72,7 +76,7 @@ function createPiece(colour, size, space) {
     }, 100)
     piece.data("moveInterval", moveInterval)
 
-    piece.click(pieceClicked)
+    piece.on("click", pieceClicked)
 
     let circle = $(`<div class="circle"></div>`)
     circle.addClass(size)
@@ -86,21 +90,32 @@ function createPiece(colour, size, space) {
 }
 
 function movePiece(piece, space) {
+
     if (!space) {
         return
     }
+
     let squareRect = space[0].getBoundingClientRect()
     let pieceRect = piece[0].getBoundingClientRect()
     piece.css("top", ((squareRect.height-pieceRect.height)/2)+squareRect.top)
     piece.css("left", ((squareRect.width-pieceRect.width)/2)+squareRect.left)
 
-    piece.data("space").data("data").pieces.pop()
+    if (!piece.data("space").hasClass("piece-rack")) {
+        let oldStack = getStack(piece.data("space"))
+        oldStack.pop()
+    }
+
 
     // piece.data("space").data("pieces", piece.data("space").data("pieces").splice(-1))
 
+    if (!space.hasClass("piece-rack")) {
+        let newStack = getStack(space)
+
+        newStack.push(piece)
+    }
+
     piece.data("space", space)
 
-    space.data("data").pieces.push(piece)
 
     // space.data("pieces", space.data("pieces").push(piece))
 
@@ -170,12 +185,38 @@ function pieceClicked(event) {
 
 function canMoveOntoPiece(piece, other) {
 
-    return sizes[other.data("size")] < sizes[piece.data("size")]
+    if (!other.data("on-board")) {
+        return false
+    } else {
+        return sizes[other.data("size")] < sizes[piece.data("size")]
+    }
 
 
 }
 
+function getStack(space) {
+    return stacks[space.data("y")][space.data("x")]
+}
+
+function getTopPiece(pieces) {
+
+    console.log(pieces)
+
+    let top = pieces[0]
+
+    for (piece of pieces) {
+        if (sizes[piece.data("size")] > top.data("size")) {
+            top = piece
+        }
+    }
+
+    return top
+
+}
+
 function checkWinForColour(colour) {
+
+    console.log(`checking ${colour}`)
 
     let lines = {
         "x":{},
@@ -188,10 +229,15 @@ function checkWinForColour(colour) {
 
         let square = $(s)
 
-        let top = square.data("data").pieces.at(-1)
+        if (getStack(square).length <= 0) {
+            continue
+        }
+
+        let top = getTopPiece(getStack(square))
+        // let top = square.data("data").pieces.at(-1)
+        console.log(top.data("colour"))
 
         if ($(top).data("colour") === colour) {
-            console.log($(top).data("colour"))
 
             let x = square.data("x")
             let y = square.data("y")
@@ -219,6 +265,8 @@ function checkWinForColour(colour) {
     }
 
     let wins = []
+
+    console.log(wins)
 
     for (straight of ["x", "y"]) {
         for (line of Object.keys(lines[straight])) {
