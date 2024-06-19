@@ -135,13 +135,13 @@ function pieceClicked(event) {
 
     if (pieceSelected) {
 
-        if (piece.data("size") === pieceSelected.data("size") && piece.data("colour") === pieceSelected.data("colour")) {
+        if (piece.data("space") === pieceSelected.data("space")) {
             pieceSelected.data("space").removeClass("selected")
             pieceSelected = null
             return
         }
 
-        if (!piece.data("on-board")) {
+        if ((!piece.data("on-board")) && piece.data("colour") === currentTurn) {
             pieceSelected.data("space").removeClass("selected")
             pieceSelected = piece
             pieceSelected.data("space").addClass("selected")
@@ -175,71 +175,81 @@ function canMoveOntoPiece(piece, other) {
 
 }
 
+function checkWinForColour(colour) {
+
+    let lines = {
+        "x":{},
+        "y":{},
+        "diag":[],
+        "rdiag":[],
+    }
+
+    for (s of $("#board").find(".square")) {
+
+        let square = $(s)
+
+        let top = square.data("data").pieces.at(-1)
+
+        if ($(top).data("colour") === colour) {
+
+            let x = square.data("x")
+            let y = square.data("y")
+
+            if (lines.x[x]) {
+                lines.x[x].push(top)
+            } else {
+                lines.x[x] = [top]
+            }
+
+            if (lines.y[y]) {
+                lines.y[y].push(top)
+            } else {
+                lines.y[y] = [top]
+            }
+
+            if (x === y) {
+                lines.diag.push(top)
+            } else if (x === 3-y) {
+                lines.rdiag.push(top)
+            }
+
+        }
+
+    }
+
+    let wins = []
+
+    for (straight of ["x", "y"]) {
+        for (line of Object.keys(lines[straight])) {
+            let win = lines[straight][line]
+            if (win.length >= 4) {
+                wins.push(win)
+            }
+        }
+    }
+
+    if (lines.diag.length >= 4) {
+        wins.push(lines.diag)
+    } else if (lines.rdiag.length >= 4) {
+        wins.push(lines.rdiag)
+    }
+
+    return wins
+}
 
 function checkForWin() {
 
-    for (colour of ["black", "white"]) {
+    let blackWins = checkWinForColour("black")
+    let whiteWins = checkWinForColour("white")
 
-        let lines = {
-            "x":{},
-            "y":{},
-            "diag":[],
-            "rdiag":[],
+    if (blackWins.length === whiteWins.length) {
+        //Currently Drawing
+    } else {
+        if (blackWins.length > whiteWins.length) {
+            gameWon(blackWins[0])
+        } else if (blackWins.length < whiteWins.length) {
+            gameWon(whiteWins[0])
         }
-
-        for (s of $("#board").find(".square")) {
-
-            let square = $(s)
-
-            let top = square.data("data").pieces.at(-1)
-
-            if ($(top).data("colour") === colour) {
-
-                let x = square.data("x")
-                let y = square.data("y")
-
-                if (lines.x[x]) {
-                    lines.x[x].push(top)
-                } else {
-                    lines.x[x] = [top]
-                }
-
-                if (lines.y[y]) {
-                    lines.y[y].push(top)
-                } else {
-                    lines.y[y] = [top]
-                }
-
-                if (x === y) {
-                    lines.diag.push(top)
-                } else if (x === 3-y) {
-                    lines.rdiag.push(top)
-                }
-
-            }
-
-        }
-
-        for (straight of ["x", "y"]) {
-            for (line of Object.keys(lines[straight])) {
-                let win = lines[straight][line]
-                if (win.length >= 4) {
-                    gameWon(win)
-                    return
-                }
-            }
-        }
-
-        if (lines.diag.length >= 4) {
-            gameWon(lines.diag)
-            return
-        } else if (lines.rdiag.length >= 4) {
-            gameWon(lines.rdiag)
-            return
-        }
-
-        
-
     }
 
 }
