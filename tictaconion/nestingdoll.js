@@ -68,11 +68,12 @@ function createPiece(colour, size, space) {
     piece.data("on-board", false)
 
     piece.addClass(size)
+    piece.addClass(colour)
 
     movePiece(piece, space)
 
     let moveInterval = setInterval(() => {
-        movePiece(piece, piece.data("space"))
+        positionPiece(piece, piece.data("space"))
     }, 100)
     piece.data("moveInterval", moveInterval)
 
@@ -89,7 +90,7 @@ function createPiece(colour, size, space) {
 
 }
 
-function movePiece(piece, space) {
+function positionPiece(piece, space) {
 
     if (!space) {
         return
@@ -99,9 +100,21 @@ function movePiece(piece, space) {
     let pieceRect = piece[0].getBoundingClientRect()
     piece.css("top", ((squareRect.height-pieceRect.height)/2)+squareRect.top)
     piece.css("left", ((squareRect.width-pieceRect.width)/2)+squareRect.left)
+}
 
-    if (!piece.data("space").hasClass("piece-rack")) {
-        let oldStack = getStack(piece.data("space"))
+function movePiece(piece, space) {
+
+    if (!space) {
+        return
+    }
+
+    let oldSpace = piece.data("space")
+    piece.data("space", space)
+
+    positionPiece(piece, space)
+
+    if (!oldSpace.hasClass("piece-rack")) {
+        let oldStack = getStack(oldSpace)
         oldStack.pop()
     }
 
@@ -114,7 +127,6 @@ function movePiece(piece, space) {
         newStack.push(piece)
     }
 
-    piece.data("space", space)
 
 
     // space.data("pieces", space.data("pieces").push(piece))
@@ -200,17 +212,7 @@ function getStack(space) {
 
 function getTopPiece(pieces) {
 
-    console.log(pieces)
-
-    let top = pieces[0]
-
-    for (piece of pieces) {
-        if (sizes[piece.data("size")] > top.data("size")) {
-            top = piece
-        }
-    }
-
-    return top
+    return pieces.at(-1)
 
 }
 
