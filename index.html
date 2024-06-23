@@ -1,144 +1,137 @@
 <!DOCTYPE html>
-
-<html>
-
+<html lang="en">
 <head>
+
+    <link rel="stylesheet" href="noughtssquared.css">
+    <script src="noughtssquared.js" defer></script>
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="canonical" href="https://gamesbutnogames.com" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="description" content="Play fun web games for free">
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="Games But No Games">
-    <meta property="og:url" content="https://gamesbutnogames.com/"/>
-    <meta property="og:description" content="Play fun web games for free">
-    <meta property="og:image" content="https://gamesbutnogames.com/bacon.png"/>
-    <meta name="googlebot-news" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
-
-    <link rel="stylesheet" href="index.css">
-    <!-- <link rel="icon" type="image/png" href="public/favicon.png"> -->
-    <script src="jquery.js" defer></script>
-    <script src="index.js" defer></script>
-    <title>Games But No Games</title>
-    <link rel="icon" type="image/png" href="bacon.png">
+    <title>Ultimate Noughts and Crosses</title>
 </head>
+<body class="nought-body">
+    <div id="game-area">
+        <div id="nought-icon" class="ox-icon turn">o</div>
 
+        <div id="big-grid" class="grid">
+            <div class="grid small-grid nought" style="border-top: none; border-left: none;">
+                <div class="tile available" style="border-top: none; border-left: none;"></div>
+                <div class="tile available" style="border-top: none;"></div>
+                <div class="tile available" style="border-top: none; border-right: none;"></div>
 
-<body>
-    <div id="homepage">
-        <h1 id="title">Games But No Games</h1>
-    </div>
+                <div class="tile available" style="border-left: none;"></div>
+                <div class="tile available"></div>
+                <div class="tile available" style="border-right: none;"></div>
 
-    <div id="gamegrid">
-
-        <div class="gamerow">
-            <!-- <div tabindex="1" class="gamecard">
-                <img class="game-icon" src="cup.png">
-                <div class="game-options">
-                    <a tabindex="-1" href="cupmatching/index.html">
-                        <button tabindex="-1" class="play-button button expand-button">
-                            <i class="bi bi-play-circle"></i>
-                        </button>
-                    </a>
-                    <button tabindex="-1" class="info-button button expand-button">
-                        <i class="bi bi-info-circle"></i>
-                    </button>
-                </div>
-            </div> -->
-
-            <div tabindex="1" class="gamecard">
-                <img class="game-icon" src="shutthedoors.png">
-                <div class="game-options">
-                    <a tabindex="-1" href="shutthedoors/index.html">
-                        <button tabindex="-1" class="play-button button expand-button">
-                            <i class="bi bi-play-circle"></i>
-                        </button>
-                    </a>
-                    <button tabindex="-1" class="info-button button expand-button">
-                        <i class="bi bi-info-circle"></i>
-                    </button>
-                </div>
+                <div class="tile available" style="border-bottom: none; border-left: none;"></div>
+                <div class="tile available" style="border-bottom: none;"></div>
+                <div class="tile available" style="border-bottom: none; border-right: none;"></div>
+                <!-- <div class="win-token">o</div> -->
             </div>
+            <div class="grid small-grid nought" style="border-top: none;">
+                <div class="tile available" style="border-top: none; border-left: none;"></div>
+                <div class="tile available" style="border-top: none;"></div>
+                <div class="tile available" style="border-top: none; border-right: none;"></div>
 
-            <div tabindex="1" class="gamecard">
-                <img class="game-icon" src="mazesweeper.png">
-                <div class="game-options">
-                    <a tabindex="-1" href="mazesweeper/index.html">
-                        <button tabindex="-1" class="play-button button expand-button">
-                            <i class="bi bi-play-circle"></i>
-                        </button>
-                    </a>
-                    <button tabindex="-1" class="info-button button expand-button">
-                        <i class="bi bi-info-circle"></i>
-                    </button>
-                </div>
-            </div>
+                <div class="tile available" style="border-left: none;"></div>
+                <div class="tile available"></div>
+                <div class="tile available" style="border-right: none;"></div>
 
-            <div tabindex="1" class="gamecard">
-                <img class="game-icon" src="tictaconion.png">
-                <div class="game-options">
-                    <a tabindex="-1" href="tictaconion/index.html">
-                        <button tabindex="-1" class="play-button button expand-button">
-                            <i class="bi bi-play-circle"></i>
-                        </button>
-                    </a>
-                    <button tabindex="-1" class="info-button button expand-button">
-                        <i class="bi bi-info-circle"></i>
-                    </button>
-                </div>
+                <div class="tile available" style="border-bottom: none; border-left: none;"></div>
+                <div class="tile available" style="border-bottom: none;"></div>
+                <div class="tile available" style="border-bottom: none; border-right: none;"></div>
             </div>
+            <div class="grid small-grid nought" style="border-top: none; border-right: none;">
+                <div class="tile available" style="border-top: none; border-left: none;"></div>
+                <div class="tile available" style="border-top: none;"></div>
+                <div class="tile available" style="border-top: none; border-right: none;"></div>
 
-            <div tabindex="1" class="gamecard">
-                <img class="game-icon" src="noughtsorcrosses.png">
-                <div class="game-options">
-                    <a tabindex="-1" href="noughtsorcrosses/index.html">
-                        <button tabindex="-1" class="play-button button expand-button">
-                            <i class="bi bi-play-circle"></i>
-                        </button>
-                    </a>
-                    <button tabindex="-1" class="info-button button expand-button">
-                        <i class="bi bi-info-circle"></i>
-                    </button>
-                </div>
-            </div>
+                <div class="tile available" style="border-left: none;"></div>
+                <div class="tile available"></div>
+                <div class="tile available" style="border-right: none;"></div>
 
-            <div tabindex="1" class="gamecard">
-                <img class="game-icon" src="noughtssquared.png">
-                <div class="game-options">
-                    <a tabindex="-1" href="noughtssquared/index.html">
-                        <button tabindex="-1" class="play-button button expand-button">
-                            <i class="bi bi-play-circle"></i>
-                        </button>
-                    </a>
-                    <button tabindex="-1" class="info-button button expand-button">
-                        <i class="bi bi-info-circle"></i>
-                    </button>
-                </div>
+                <div class="tile available" style="border-bottom: none; border-left: none;"></div>
+                <div class="tile available" style="border-bottom: none;"></div>
+                <div class="tile available" style="border-bottom: none; border-right: none;"></div>
             </div>
+            
+            <div class="grid small-grid nought" style="border-left: none;">
+                <div class="tile available" style="border-top: none; border-left: none;"></div>
+                <div class="tile available" style="border-top: none;"></div>
+                <div class="tile available" style="border-top: none; border-right: none;"></div>
+
+                <div class="tile available" style="border-left: none;"></div>
+                <div class="tile available"></div>
+                <div class="tile available" style="border-right: none;"></div>
+
+                <div class="tile available" style="border-bottom: none; border-left: none;"></div>
+                <div class="tile available" style="border-bottom: none;"></div>
+                <div class="tile available" style="border-bottom: none; border-right: none;"></div></div>
+            <div class="grid small-grid nought">
+                <div class="tile available" style="border-top: none; border-left: none;"></div>
+                <div class="tile available" style="border-top: none;"></div>
+                <div class="tile available" style="border-top: none; border-right: none;"></div>
+
+                <div class="tile available" style="border-left: none;"></div>
+                <div class="tile available"></div>
+                <div class="tile available" style="border-right: none;"></div>
+
+                <div class="tile available" style="border-bottom: none; border-left: none;"></div>
+                <div class="tile available" style="border-bottom: none;"></div>
+                <div class="tile available" style="border-bottom: none; border-right: none;"></div>
+            </div>
+            <div class="grid small-grid nought" style="border-right: none;">
+                <div class="tile available" style="border-top: none; border-left: none;"></div>
+                <div class="tile available" style="border-top: none;"></div>
+                <div class="tile available" style="border-top: none; border-right: none;"></div>
+
+                <div class="tile available" style="border-left: none;"></div>
+                <div class="tile available"></div>
+                <div class="tile available" style="border-right: none;"></div>
+
+                <div class="tile available" style="border-bottom: none; border-left: none;"></div>
+                <div class="tile available" style="border-bottom: none;"></div>
+                <div class="tile available" style="border-bottom: none; border-right: none;"></div></div>
+
+            <div class="grid small-grid nought" style="border-bottom: none; border-left: none;">
+                <div class="tile available" style="border-top: none; border-left: none;"></div>
+                <div class="tile available" style="border-top: none;"></div>
+                <div class="tile available" style="border-top: none; border-right: none;"></div>
+
+                <div class="tile available" style="border-left: none;"></div>
+                <div class="tile available"></div>
+                <div class="tile available" style="border-right: none;"></div>
+
+                <div class="tile available" style="border-bottom: none; border-left: none;"></div>
+                <div class="tile available" style="border-bottom: none;"></div>
+                <div class="tile available" style="border-bottom: none; border-right: none;"></div></div>
+            <div class="grid small-grid nought" style="border-bottom: none;">
+                <div class="tile available" style="border-top: none; border-left: none;"></div>
+                <div class="tile available" style="border-top: none;"></div>
+                <div class="tile available" style="border-top: none; border-right: none;"></div>
+
+                <div class="tile available" style="border-left: none;"></div>
+                <div class="tile available"></div>
+                <div class="tile available" style="border-right: none;"></div>
+
+                <div class="tile available" style="border-bottom: none; border-left: none;"></div>
+                <div class="tile available" style="border-bottom: none;"></div>
+                <div class="tile available" style="border-bottom: none; border-right: none;"></div></div>
+            <div class="grid small-grid nought" style="border-bottom: none; border-right: none;">
+                <div class="tile available" style="border-top: none; border-left: none;"></div>
+                <div class="tile available" style="border-top: none;"></div>
+                <div class="tile available" style="border-top: none; border-right: none;"></div>
+
+                <div class="tile available" style="border-left: none;"></div>
+                <div class="tile available"></div>
+                <div class="tile available" style="border-right: none;"></div>
+
+                <div class="tile available" style="border-bottom: none; border-left: none;"></div>
+                <div class="tile available" style="border-bottom: none;"></div>
+                <div class="tile available" style="border-bottom: none; border-right: none;"></div></div>
         </div>
-    </div>
 
-    <div id="screen-blocker"></div>
-    <div id="info-box">
-        <div id="info-close" tabindex="2">
-            <i class="bi bi-x"></i>
-        </div>
-        <div id="image-info" class="info-child">
-            <img id="info-icon" src="bacon.png">
-            <a id="play-info" tabindex="-1" href="noughtsorcrosses/index.html">
-                <button tabindex="1" class="play-button button">
-                    <i class="bi bi-play-circle"></i>
-                </button>
-            </a>
-        </div>
-        <div id="text-info" class="info-child">
-            <h1 id="game-title">Noughts Or Crosses</h1>
-            <p id="description-info">Noughts and crosses but like theres onions and also you can put down colours and close doors yk.</p>
-            <h2>How to play:</h2>
-            <p id="rules-info">Unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga.</p>
-        </div>
+        <div id="cross-icon" class="ox-icon">x</div>
     </div>
 </body>
-
 </html>
