@@ -1,0 +1,151 @@
+* {
+    padding: 0;
+    margin: 0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-user-select: none;
+    user-select: none;
+    -webkit-user-drag: none;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+body {
+    overflow: hidden;
+    transition: background-color 0.2s;
+}
+
+.grid {
+    display: grid;
+}
+
+.small-grid {
+    grid-template-columns: repeat(3, 9dvmin);
+    grid-template-rows: repeat(3, 9dvmin);
+    margin: auto;
+    padding: 0.5dvmin;
+
+    background-color: white;
+    border: solid salmon 2px;
+    gap: 0;
+
+    transition: background-color 0.2s;
+}
+
+.nought {
+    background-color: lightblue;
+}
+
+.cross {
+    background-color: pink;
+}
+
+.win-token {
+    pointer-events: none;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* top: 0; */
+    /* left: 0; */
+    font-size: 27dvmin;
+    width: 27dvmin;
+    height: 27dvmin;
+    padding-bottom: 6dvmin;
+}
+
+.nought-body {
+    background-color: rgb(100, 100, 255);
+}
+
+.cross-body {
+    background-color: rgb(255, 100, 100);
+}
+
+.nought-win {
+    background-color: rgb(200, 200, 255) !important;
+}
+
+.cross-win {
+    background-color: rgb(255, 200, 200) !important;
+}
+
+.tile {
+    border: solid grey 1px;
+    /* background-color: blueviolet; */
+    display: flex;
+    width: 9dvmin;
+    height: 9dvmin;
+    margin: 0;
+    font-size: 9dvmin;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 1.2dvmin;
+    transition: background-color 0.2s;
+}
+
+.tile.available:hover {
+    background-color: rgb(196, 196, 196);
+}
+
+.nought-token {
+    color: blue;
+}
+
+.cross-token {
+    color: red;
+}
+
+.ox-icon {
+    pointer-events: none;
+    min-width: 0;
+    min-height: 0;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    font-size: 7.5dvmax;
+    align-items: center;
+    justify-content: center;
+
+    transition: color .5s ease-out, transform .5s ease-out;
+}
+
+#nought-icon {
+    color: lightblue;
+}
+
+#nought-icon.turn {
+    color: blue;
+    transform: scale(2);
+}
+
+#cross-icon {
+    color: pink;
+}
+
+#cross-icon.turn {
+    color: red;
+    transform: scale(2);
+}
+
+#game-area {
+    width: 100dvw;
+    height: 100dvh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#big-grid {
+    grid-template-columns: repeat(3, 30dvmin);
+    grid-template-rows: repeat(3, 30dvmin);
+
+    /* background-color: black; */
+    /* border: solid black 20px; */
+}
+
+@media only screen and (orientation: portrait) {
+    #game-area {
+        flex-direction: column;
+    }
+}
