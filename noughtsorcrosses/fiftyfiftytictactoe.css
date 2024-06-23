@@ -110,6 +110,7 @@ body {
     transform-origin: center;
     transition: transform 0.2s, left 0.2s, top 0.2s;
     pointer-events: none;
+    user-select: none;
 }
 
 .piece.flipped {

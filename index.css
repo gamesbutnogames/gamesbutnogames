@@ -1,5 +1,22 @@
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css");
+
+* {
+    /* padding: 0; */
+    /* margin: 0; */
+    /* -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box; */
+    -webkit-user-select: none;
+    user-select: none;
+    -webkit-user-drag: none;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
 body {
-    background-color: rgb(228, 228, 228);
+    background-color: rgb(214, 162, 49);
+    background-image: radial-gradient(rgb(214, 162, 49) 6px, transparent 6px);
+    background-size: 64px 64px;
+    background-color: blanchedalmond;
 }
 
 #title {
@@ -18,6 +35,7 @@ body {
 .gamerow {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     width: 100%;
     gap: 1em;
     align-items: center;
@@ -28,23 +46,206 @@ body {
     text-decoration: none;
     color: black;
     font-size: 1em;
-    padding: 0.5em;
+    padding: 10px;
     display: flex;
     flex-direction: column;
-    background-color: white;
+    background-color: rgb(219, 202, 181); /* wheat */
     align-items: center;
-    width: 25%;
+    width: 300px;
+    height: 300px;
     border-radius: 0.5em;
+    border-style: solid;
+    border-color: aliceblue;
     gap: 1em;
-    padding-bottom: 1em;
-    transition: filter 0.2s;
+    /* padding-bottom: 1em; */
+    transition: height 0.2s, margin 0.2s;
+    overflow: hidden;
 }
 
-.gamecard:hover {
+.gamecard:hover, .gamecard:focus {
     filter: brightness(80%);
+    /* width: 400px; */
+    /* height: 400px;
+    margin-bottom: -100px; */
+}
+
+.gamecard.selected {
+    height: 400px;
+    margin-bottom: -100px;
+}
+
+.gamecard.selected .expand-button {
+    display: inline-block;
 }
 
 .game-icon {
     /* width: 8em; */
     height: 8em;
+}
+
+.game-icon {
+    width: 100%;
+    aspect-ratio: 1;
+    height: auto;
+    margin: 0;
+}
+
+.game-options {
+    display: flex;
+    justify-content: space-between;
+}
+
+.play-button {
+    background-color: green;
+}
+
+.info-button {
+    background-color: orangered;
+}
+
+.button {
+    border: none;
+    color: white;
+    margin: 0px 5px;
+    width: 140px;
+    height: 80px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 40px;
+    border-radius: 4px;
+    padding: 0;
+    /* align-items: center;
+    justify-content: center;
+    text-align: center; */
+}
+
+.expand-button {
+    display: none;
+}
+
+i {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 40px;
+}
+
+.info-child {
+    /* height: 100%; */
+    /* width: 100%; */
+    /* padding: 10px; */
+    flex-basis: 0;
+}
+
+#info-box {
+    display: none;
+    position: fixed;
+    left: 10dvw;
+    top: 10dvh;
+    width: 80dvw;
+    height: 80dvh;
+    /* background-color: rgb(219, 202, 181); */
+    /* background-image: linear-gradient(90deg, rgb(219, 202, 181) 20%, rgb(219, 191, 157) 20%); */
+    border-radius: 20px;
+    overflow: hidden;
+    border: solid aliceblue 0.5em;
+    z-index: 99999;
+}
+
+#image-info {
+    /* background-color: pink; */
+    background-color: rgb(219, 202, 181);
+    display: flex;
+    flex-direction: column;
+    /* width: 16dvw; */
+    /* background-color: red; */
+    justify-content: center;
+    align-items: center;
+    flex-grow: 0.2;
+    flex-shrink: 0.2;
+
+    padding: 0px;
+}
+
+#image-info > * {
+    margin: 20px;
+}
+
+#image-info > img {
+    /* flex-grow: 1; */
+    /* flex-shrink: 1; */
+    aspect-ratio: 1;
+    width: 12dvw;
+    /* object-fit: contain; */
+    border-radius: 5px;
+    border: solid aliceblue 5px;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+#image-info .button {
+    width: 80px;
+}
+
+#text-info {
+    /* background-color: blue; */
+    background-color: rgb(219, 191, 157);
+    display: flex;
+    flex-direction: column;
+    overflow-y: scroll;
+    /* width: 64dvw; */
+    flex-grow: 0.8;
+    flex-shrink: 0.8;
+    
+    padding: 20px;
+}
+
+#game-title {
+    text-align: center;
+}
+
+#description-info {
+    text-align: center;
+}
+
+#info-close {
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+#info-close > i {
+    font-size: 80px;
+}
+
+#screen-blocker {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: grey;
+    opacity: 20%;
+    z-index: 99998;
+    pointer-events: all;
+}
+
+@media only screen and (orientation: portrait) {
+    #info-box {
+        flex-direction: column;
+        background-image: linear-gradient(rgb(219, 202, 181) 20%, rgb(219, 191, 157) 20%);
+    }
+
+    #image-info {
+        flex-direction: row;
+    }
+    #image-info > img {
+        height: 12dvh;
+        width: auto;
+    }
+
+    #info-close > i {
+        font-size: 40px;
+    }
 }

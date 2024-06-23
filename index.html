@@ -16,7 +16,6 @@
     <meta property="og:image" content="https://gamesbutnogames.com/bacon.png"/>
     <meta name="googlebot-news" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
 
-
     <link rel="stylesheet" href="index.css">
     <!-- <link rel="icon" type="image/png" href="public/favicon.png"> -->
     <script src="jquery.js" defer></script>
@@ -28,51 +27,104 @@
 
 <body>
     <div id="homepage">
-        <h1 id="title">Game But No Games</h1>
+        <h1 id="title">Games But No Games</h1>
     </div>
 
     <div id="gamegrid">
 
         <div class="gamerow">
-
-            <!-- <a href="cupmatching/index.html" class="gamecard">
+            <!-- <div tabindex="1" class="gamecard">
                 <img class="game-icon" src="cup.png">
-                <h1 style="margin: 0">Cup Matching</h1>
-                <p style="margin: 0;">Guess the colours of the cups in order to win</p>
-            </a> -->
+                <div class="game-options">
+                    <a tabindex="-1" href="cupmatching/index.html">
+                        <button tabindex="-1" class="play-button button expand-button">
+                            <i class="bi bi-play-circle"></i>
+                        </button>
+                    </a>
+                    <button tabindex="-1" class="info-button button expand-button">
+                        <i class="bi bi-info-circle"></i>
+                    </button>
+                </div>
+            </div> -->
 
-            <a href="https://gamesbutnogames.com/shutthedoors/" class="gamecard">
+            <div tabindex="1" class="gamecard">
                 <img class="game-icon" src="shutthedoors.png">
-                <h1 style="margin: 0">Shut the Doors</h1>
-                <p style="margin: 0;">Close the least number of doors to win</p>
-            </a>
+                <div class="game-options">
+                    <a tabindex="-1" href="shutthedoors/index.html">
+                        <button tabindex="-1" class="play-button button expand-button">
+                            <i class="bi bi-play-circle"></i>
+                        </button>
+                    </a>
+                    <button tabindex="-1" class="info-button button expand-button">
+                        <i class="bi bi-info-circle"></i>
+                    </button>
+                </div>
+            </div>
 
-            <a href="https://gamesbutnogames.com/mazesweeper/" class="gamecard">
+            <div tabindex="1" class="gamecard">
                 <img class="game-icon" src="mazesweeper.png">
-                <h1 style="margin: 0">Maze Sweeper</h1>
-                <p style="margin: 0;">Stomp colours to outsmart your opponent</p>
-            </a>
+                <div class="game-options">
+                    <a tabindex="-1" href="mazesweeper/index.html">
+                        <button tabindex="-1" class="play-button button expand-button">
+                            <i class="bi bi-play-circle"></i>
+                        </button>
+                    </a>
+                    <button tabindex="-1" class="info-button button expand-button">
+                        <i class="bi bi-info-circle"></i>
+                    </button>
+                </div>
+            </div>
 
-        </div>
-
-        <div class="gamerow">
-
-            <a href="https://gamesbutnogames.com/noughtsorcrosses/" class="gamecard">
-                <img class="game-icon" src="noughtsorcrosses.png">
-                <h1 style="margin: 0">Noughts Or Crosses</h1>
-                <p style="margin: 0;">Tic-tac-toe with half pieces</p>
-            </a>
-
-            <a href="https://gamesbutnogames.com/tictaconion/" class="gamecard">
+            <div tabindex="1" class="gamecard">
                 <img class="game-icon" src="tictaconion.png">
-                <h1 style="margin: 0">Tic Tac Onion</h1>
-                <p style="margin: 0;">Tic-tac-toe with russian nesting doll pieces???</p>
-            </a>
+                <div class="game-options">
+                    <a tabindex="-1" href="tictaconion/index.html">
+                        <button tabindex="-1" class="play-button button expand-button">
+                            <i class="bi bi-play-circle"></i>
+                        </button>
+                    </a>
+                    <button tabindex="-1" class="info-button button expand-button">
+                        <i class="bi bi-info-circle"></i>
+                    </button>
+                </div>
+            </div>
 
+            <div tabindex="1" class="gamecard">
+                <img class="game-icon" src="noughtsorcrosses.png">
+                <div class="game-options">
+                    <a tabindex="-1" href="noughtsorcrosses/index.html">
+                        <button tabindex="-1" class="play-button button expand-button">
+                            <i class="bi bi-play-circle"></i>
+                        </button>
+                    </a>
+                    <button tabindex="-1" class="info-button button expand-button">
+                        <i class="bi bi-info-circle"></i>
+                    </button>
+                </div>
+            </div>
         </div>
-
     </div>
 
+    <div id="screen-blocker"></div>
+    <div id="info-box">
+        <div id="info-close" tabindex="2">
+            <i class="bi bi-x"></i>
+        </div>
+        <div id="image-info" class="info-child">
+            <img id="info-icon" src="bacon.png">
+            <a id="play-info" tabindex="-1" href="noughtsorcrosses/index.html">
+                <button tabindex="1" class="play-button button">
+                    <i class="bi bi-play-circle"></i>
+                </button>
+            </a>
+        </div>
+        <div id="text-info" class="info-child">
+            <h1 id="game-title">Noughts Or Crosses</h1>
+            <p id="description-info">Noughts and crosses but like theres onions and also you can put down colours and close doors yk.</p>
+            <h2>How to play:</h2>
+            <p id="rules-info">Unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga unga bunga.</p>
+        </div>
+    </div>
 </body>
 
 </html>
