@@ -14,19 +14,19 @@ const gameData = [{
 }, {
     title: "MazeSweeper",
     url: "mazesweeper",
-    image: "colourstomper.png",
+    image: "mazesweeper.png",
     description: "Stomp the colours",
     rules: "Tbh idek what the fuck this one is",
 }, {
     title: "Tic Tac Onion",
     url: "tictaconion",
-    image: "nestingdoll.png",
+    image: "tictaconion.png",
     description: "Onions",
     rules: "Ogres are like onions",
 }, {
     title: "Noughts Or Crosses",
     url: "noughtsorcrosses",
-    image: "fiftyfifty.png",
+    image: "noughtsorcrosses.png",
     description: "Like noughts and crosses but less balanced",
     rules: "This game isn't very fair",
 }]
