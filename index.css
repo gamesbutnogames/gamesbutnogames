@@ -74,6 +74,10 @@ body {
     margin-bottom: -100px;
 }
 
+.gamecard.selected .expand-button {
+    display: inline-block;
+}
+
 .game-icon {
     /* width: 8em; */
     height: 8em;
@@ -113,6 +117,10 @@ body {
     /* align-items: center;
     justify-content: center;
     text-align: center; */
+}
+
+.expand-button {
+    display: none;
 }
 
 i {
