@@ -28,15 +28,10 @@
 <body>
 
     <div id="top-bar">
-        <a id="more-games" href="https://gamesbutnogames.com" class="bi bi-controller"><div id="more-games-text">More</div></a>
+        <a id="more-games" href="https://gamesbutnogames.com" class="bi bi-controller"><div id="more-games-text"></div></a>
         <div id="title"><h1>Tic Tac Onion</h1><img id="onions" src="onions.svg"/></div>
         <div id="how-to-play" class="bi bi-question-circle"></div>
     </div>
-
-    
-
-
-    
 
 
     <div id="game">
@@ -45,6 +40,13 @@
         <div id="board"></div>
         <div id="white-holder" class="piece-holder"></div>
 
+    </div>
+
+    <div id="message">Current Turn:<img src="red-onion.png" id="message-onion" class="small-onion"/></div>
+
+    <div id="end-game">
+        <div id="end-message"><img src="red-onion.png" id="end-message-onion" class="small-onion"/> Wins</div>
+        <div id="restart" onclick="restart()">Restart</div>
     </div>
 
 

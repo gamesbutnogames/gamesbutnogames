@@ -218,8 +218,6 @@ function getTopPiece(pieces) {
 
 function checkWinForColour(colour) {
 
-    console.log(`checking ${colour}`)
-
     let lines = {
         "x":{},
         "y":{},
@@ -237,7 +235,6 @@ function checkWinForColour(colour) {
 
         let top = getTopPiece(getStack(square))
         // let top = square.data("data").pieces.at(-1)
-        console.log(top.data("colour"))
 
         if ($(top).data("colour") === colour) {
 
@@ -267,8 +264,6 @@ function checkWinForColour(colour) {
     }
 
     let wins = []
-
-    console.log(wins)
 
     for (straight of ["x", "y"]) {
         for (line of Object.keys(lines[straight])) {
@@ -313,7 +308,45 @@ function gameWon(line) {
         piece.data("space").addClass("line")
     }
 
+    $("#message").hide()
+    $("#end-game").show()
+
+    if (colour === "white") {
+        $("#end-message-onion").attr("src", "white-onion.svg")
+    } else {
+        $("#end-message-onion").attr("src", "red-onion.png")   
+    }
+
     gameStarted = false
+
+}
+
+function restart() {
+
+    stacks = {}
+    gameStarted = true
+    currentTurn = "black"
+    pieceSelected = null
+    gameStarted = true
+
+    for (child of $("#board").children()) {
+        $(child).remove()
+    }
+
+    for (child of $("#black-holder").children()) {
+        $(child).remove()
+    }
+
+    for (child of $("#white-holder").children()) {
+        $(child).remove()
+    }
+
+    $("#end-game").hide()
+    $("#message").show()
+    $("#message-onion").attr("src", "red-onion.png")
+
+    createBoard(4, 4)
+    createPieces()
 
 }
 
@@ -321,9 +354,14 @@ function madeMove() {
 
     if (currentTurn === "black") {
         currentTurn = "white"
+        $("#message-onion").attr("src", "white-onion.svg")
+        //This image is a dif format lmao
     } else {
         currentTurn = "black"
+        $("#message-onion").attr("src", "red-onion.png")
     }
+
+    
 
     checkForWin()
     
@@ -332,6 +370,8 @@ function madeMove() {
 var pieceSelected = null
 var currentTurn = "black"
 var gameStarted = true
+
+$("#end-game").hide()
 
 $(() => {
     createBoard(4, 4)
