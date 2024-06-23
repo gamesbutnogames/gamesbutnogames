@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <link rel="stylesheet" href="noughtssquared.css">
+    <script src="noughtssquared.js" defer></script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ultimate Noughts and Crosses</title>
+</head>
+<body class="nought-body">
+    <div id="game-area">
+        <div id="nought-icon" class="ox-icon turn">o</div>
+
+        <div id="big-grid" class="grid">
+            <div class="grid small-grid nought" style="border-top: none; border-left: none;">
+                <div class="tile available" style="border-top: none; border-left: none;"></div>
+                <div class="tile available" style="border-top: none;"></div>
+                <div class="tile available" style="border-top: none; border-right: none;"></div>
+
+                <div class="tile available" style="border-left: none;"></div>
+                <div class="tile available"></div>
+                <div class="tile available" style="border-right: none;"></div>
+
+                <div class="tile available" style="border-bottom: none; border-left: none;"></div>
+                <div class="tile available" style="border-bottom: none;"></div>
+                <div class="tile available" style="border-bottom: none; border-right: none;"></div>
+                <!-- <div class="win-token">o</div> -->
+            </div>
+            <div class="grid small-grid nought" style="border-top: none;">
+                <div class="tile available" style="border-top: none; border-left: none;"></div>
+                <div class="tile available" style="border-top: none;"></div>
+                <div class="tile available" style="border-top: none; border-right: none;"></div>
+
+                <div class="tile available" style="border-left: none;"></div>
+                <div class="tile available"></div>
+                <div class="tile available" style="border-right: none;"></div>
+
+                <div class="tile available" style="border-bottom: none; border-left: none;"></div>
+                <div class="tile available" style="border-bottom: none;"></div>
+                <div class="tile available" style="border-bottom: none; border-right: none;"></div>
+            </div>
+            <div class="grid small-grid nought" style="border-top: none; border-right: none;">
+                <div class="tile available" style="border-top: none; border-left: none;"></div>
+                <div class="tile available" style="border-top: none;"></div>
+                <div class="tile available" style="border-top: none; border-right: none;"></div>
+
+                <div class="tile available" style="border-left: none;"></div>
+                <div class="tile available"></div>
+                <div class="tile available" style="border-right: none;"></div>
+
+                <div class="tile available" style="border-bottom: none; border-left: none;"></div>
+                <div class="tile available" style="border-bottom: none;"></div>
+                <div class="tile available" style="border-bottom: none; border-right: none;"></div>
+            </div>
+            
+            <div class="grid small-grid nought" style="border-left: none;">
+                <div class="tile available" style="border-top: none; border-left: none;"></div>
+                <div class="tile available" style="border-top: none;"></div>
+                <div class="tile available" style="border-top: none; border-right: none;"></div>
+
+                <div class="tile available" style="border-left: none;"></div>
+                <div class="tile available"></div>
+                <div class="tile available" style="border-right: none;"></div>
+
+                <div class="tile available" style="border-bottom: none; border-left: none;"></div>
+                <div class="tile available" style="border-bottom: none;"></div>
+                <div class="tile available" style="border-bottom: none; border-right: none;"></div></div>
+            <div class="grid small-grid nought">
+                <div class="tile available" style="border-top: none; border-left: none;"></div>
+                <div class="tile available" style="border-top: none;"></div>
+                <div class="tile available" style="border-top: none; border-right: none;"></div>
+
+                <div class="tile available" style="border-left: none;"></div>
+                <div class="tile available"></div>
+                <div class="tile available" style="border-right: none;"></div>
+
+                <div class="tile available" style="border-bottom: none; border-left: none;"></div>
+                <div class="tile available" style="border-bottom: none;"></div>
+                <div class="tile available" style="border-bottom: none; border-right: none;"></div>
+            </div>
+            <div class="grid small-grid nought" style="border-right: none;">
+                <div class="tile available" style="border-top: none; border-left: none;"></div>
+                <div class="tile available" style="border-top: none;"></div>
+                <div class="tile available" style="border-top: none; border-right: none;"></div>
+
+                <div class="tile available" style="border-left: none;"></div>
+                <div class="tile available"></div>
+                <div class="tile available" style="border-right: none;"></div>
+
+                <div class="tile available" style="border-bottom: none; border-left: none;"></div>
+                <div class="tile available" style="border-bottom: none;"></div>
+                <div class="tile available" style="border-bottom: none; border-right: none;"></div></div>
+
+            <div class="grid small-grid nought" style="border-bottom: none; border-left: none;">
+                <div class="tile available" style="border-top: none; border-left: none;"></div>
+                <div class="tile available" style="border-top: none;"></div>
+                <div class="tile available" style="border-top: none; border-right: none;"></div>
+
+                <div class="tile available" style="border-left: none;"></div>
+                <div class="tile available"></div>
+                <div class="tile available" style="border-right: none;"></div>
+
+                <div class="tile available" style="border-bottom: none; border-left: none;"></div>
+                <div class="tile available" style="border-bottom: none;"></div>
+                <div class="tile available" style="border-bottom: none; border-right: none;"></div></div>
+            <div class="grid small-grid nought" style="border-bottom: none;">
+                <div class="tile available" style="border-top: none; border-left: none;"></div>
+                <div class="tile available" style="border-top: none;"></div>
+                <div class="tile available" style="border-top: none; border-right: none;"></div>
+
+                <div class="tile available" style="border-left: none;"></div>
+                <div class="tile available"></div>
+                <div class="tile available" style="border-right: none;"></div>
+
+                <div class="tile available" style="border-bottom: none; border-left: none;"></div>
+                <div class="tile available" style="border-bottom: none;"></div>
+                <div class="tile available" style="border-bottom: none; border-right: none;"></div></div>
+            <div class="grid small-grid nought" style="border-bottom: none; border-right: none;">
+                <div class="tile available" style="border-top: none; border-left: none;"></div>
+                <div class="tile available" style="border-top: none;"></div>
+                <div class="tile available" style="border-top: none; border-right: none;"></div>
+
+                <div class="tile available" style="border-left: none;"></div>
+                <div class="tile available"></div>
+                <div class="tile available" style="border-right: none;"></div>
+
+                <div class="tile available" style="border-bottom: none; border-left: none;"></div>
+                <div class="tile available" style="border-bottom: none;"></div>
+                <div class="tile available" style="border-bottom: none; border-right: none;"></div></div>
+        </div>
+
+        <div id="cross-icon" class="ox-icon">x</div>
+    </div>
+</body>
+</html>

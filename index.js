@@ -29,6 +29,12 @@ const gameData = [{
     image: "noughtsorcrosses.png",
     description: "Like noughts and crosses but less balanced",
     rules: "This game isn't very fair",
+}, {
+    title: "Ultimate Noughts and Crosses",
+    url: "noughtssquared",
+    image: "noughtssquared.png",
+    description: "Tic Tac Toe, now in 3D!",
+    rules: "Win noughts and crosses. Then do it again. Then do it again. Win noughts and crosses with your noughts and crosses."
 }]
 
 var selectedElement
