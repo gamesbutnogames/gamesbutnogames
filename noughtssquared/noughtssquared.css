@@ -110,6 +110,29 @@ body {
     transition: color .5s ease-out, transform .5s ease-out;
 }
 
+#back-button {
+    display: flex;
+    position: absolute;
+    top: 0;
+    left: 0;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-weight: 800;
+    background-color: orange;
+    height: 100dvh;
+    width: 1.5dvw;
+    min-width: 20px;
+    font-size: 2dvw;
+
+    transition: width 0.05s linear, font-size 0.05s linear;
+}
+
+#back-button:hover {
+    width: 3dvw;
+    font-size: 3.4dvw;
+}
+
 #nought-icon {
     color: lightblue;
 }
@@ -147,5 +170,24 @@ body {
 @media only screen and (orientation: portrait) {
     #game-area {
         flex-direction: column;
+    }
+
+    #back-button {
+        width: 5dvh;
+        height: 5dvh;
+        margin: 2.5dvh;
+        font-size: 5dvh;
+        padding-bottom: 0.7dvh;
+        font-weight: 400;
+        transition: font-weight 0.05s linear;
+    }
+
+    #back-button:hover {
+        width: 5dvh;
+        height: 5dvh;
+        margin: 2.5dvh;
+        font-size: 5dvh;
+        padding-bottom: 0.7dvh;
+        font-weight: 800;
     }
 }
