@@ -93,7 +93,7 @@ infoButtons.forEach(element => {
     element.addEventListener("click", (event) => {
         console.log(gameData[gameData.length - element.parentElement.parentElement.style.zIndex])
         document.getElementById("info-icon").src = gameData[gameData.length - element.parentElement.parentElement.style.zIndex].image
-        document.getElementById("play-info").href = `${gameData[gameData.length - element.parentElement.parentElement.style.zIndex].url}/index.html`
+        document.getElementById("play-info").href = gameData[gameData.length - element.parentElement.parentElement.style.zIndex].url
         document.getElementById("game-title").innerHTML = gameData[gameData.length - element.parentElement.parentElement.style.zIndex].title
         document.getElementById("description-info").innerHTML = gameData[gameData.length - element.parentElement.parentElement.style.zIndex].description
         document.getElementById("rules-info").innerHTML = gameData[gameData.length - element.parentElement.parentElement.style.zIndex].rules
