@@ -77,7 +77,7 @@ function CheckWin(board, lastToken, tokenType) {
         if (token != tokenType) return
         let difference = [Math.floor(lastToken/3 - Math.floor(index/3)), lastToken%3 - index%3]
         // console.log(difference)
-        if (JSON.stringify(differences).includes([-difference[0], -difference[1]]) || JSON.stringify(differences).includes([difference[0]*2, difference[1]*2]) || JSON.stringify(differences).includes([difference[0]/2, difference[1]/2])) {
+        if (JSON.stringify(differences).includes(JSON.stringify([-difference[0], -difference[1]])) || JSON.stringify(differences).includes(JSON.stringify([difference[0]*2, difference[1]*2])) || JSON.stringify(differences).includes(JSON.stringify([difference[0]/2, difference[1]/2]))) {
             win = true
             return
         }
