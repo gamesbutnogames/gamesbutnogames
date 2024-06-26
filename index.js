@@ -6,7 +6,7 @@ const gameData = [{
     description: "Match the cups",
     rules: "Longer u take more u suck",
 }, {
-    title: "Shut The Doors",
+    title: "Shut the Doors",
     url: "shutthedoors",
     image: "shutthedoors.png",
     description: "Shut the doors",
@@ -24,7 +24,7 @@ const gameData = [{
     description: "Onions",
     rules: "Ogres are like onions",
 }, {
-    title: "Noughts Or Crosses",
+    title: "Noughts or Crosses",
     url: "noughtsorcrosses",
     image: "noughtsorcrosses.png",
     description: "Like noughts and crosses but less balanced",
@@ -93,7 +93,9 @@ infoButtons.forEach(element => {
     element.addEventListener("click", (event) => {
         console.log(gameData[gameData.length - element.parentElement.parentElement.style.zIndex])
         document.getElementById("info-icon").src = gameData[gameData.length - element.parentElement.parentElement.style.zIndex].image
-        document.getElementById("play-info").href = `${gameData[gameData.length - element.parentElement.parentElement.style.zIndex].url}/index.html`
+        document.getElementById("info-icon").title = gameData[gameData.length - element.parentElement.parentElement.style.zIndex].title
+        document.getElementById("info-icon").alt = gameData[gameData.length - element.parentElement.parentElement.style.zIndex].title
+        document.getElementById("play-info").href = gameData[gameData.length - element.parentElement.parentElement.style.zIndex].url
         document.getElementById("game-title").innerHTML = gameData[gameData.length - element.parentElement.parentElement.style.zIndex].title
         document.getElementById("description-info").innerHTML = gameData[gameData.length - element.parentElement.parentElement.style.zIndex].description
         document.getElementById("rules-info").innerHTML = gameData[gameData.length - element.parentElement.parentElement.style.zIndex].rules
