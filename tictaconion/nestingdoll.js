@@ -168,12 +168,6 @@ function pieceClicked(event) {
             return
         }
 
-        if ((!piece.data("on-board")) && piece.data("colour") === currentTurn) {
-            pieceSelected.data("space").removeClass("selected")
-            pieceSelected = piece
-            pieceSelected.data("space").addClass("selected")
-            return
-        }
 
         if (canMoveOntoPiece(pieceSelected, piece)) {
 
@@ -183,6 +177,14 @@ function pieceClicked(event) {
             madeMove()
 
         }
+
+        if (piece.data("colour") === currentTurn ) {
+            pieceSelected.data("space").removeClass("selected")
+            pieceSelected = piece
+            pieceSelected.data("space").addClass("selected")
+            return
+        }
+
 
     } else {
 
