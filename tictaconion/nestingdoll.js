@@ -369,11 +369,20 @@ function madeMove() {
     
 }
 
+function openHelp() {
+    $("#help").show()
+}
+
+function closeHelp() {
+    $("#help").hide()
+}
+
 var pieceSelected = null
 var currentTurn = "black"
 var gameStarted = true
 
 $("#end-game").hide()
+$("#help").hide()
 
 $(() => {
     createBoard(4, 4)

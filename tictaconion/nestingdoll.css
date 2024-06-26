@@ -8,6 +8,7 @@
     --square-size: 150px;
 }
 
+
 body {
     background-color: #f2e3f3;
     display: flex;
@@ -17,6 +18,7 @@ body {
     /* justify-content: baseline; */
     height: 100%;
     overflow: hidden;
+    margin: 0;
 }
 
 #title {
@@ -52,6 +54,35 @@ body {
 #how-to-play {
     font-size: 50px;
     margin-right: 15px;
+}
+
+#help {
+    display: flex;
+    position: absolute;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.459);
+    z-index: 100;
+}
+
+.popup {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: baseline;
+    width: 75%;
+    height: 75%;
+    background-color: #f2e3f3;
+    border: 5px solid black;
+}
+
+.close {
+    font-size: 60px;
+    align-self: flex-end;
+    margin-right: 5px;
 }
 
 #more-games {

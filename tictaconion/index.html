@@ -27,10 +27,27 @@
 
 <body>
 
+    <div id="help">
+
+        <div class="popup">
+            <div class="close bi bi-x" onclick="closeHelp()"></div>
+            <h1>How To Play</h1>
+            <p>Complete a line of 4 of your own onions to win</p>
+            <p>You can move <i>any</i> of your own onions on your turn to a valid position on the grid</p>
+            <p>Onions can be moved to empty grid spaces, or on top of smaller onions</p>
+            <p>For a winning line ot be valid, your onion must be the largest on each of the grid spaces making up the line</p>
+            <div style="display: flex; flex-direction: row; gap: 20px;">
+                <div style="display: flex; flex-direction: column; align-items: center;"><img style="width: 200px; border: 10px solid red;" src="invalidLine.png"/><p>INVALID</p></div>
+                <div style="display: flex; flex-direction: column; align-items: center;"><img style="width: 200px; border: 10px solid lime;" src="validLine.png"/><p>VALID</p></div>
+            </div>
+        </div>
+
+    </div>
+
     <div id="top-bar">
         <a id="more-games" href="https://gamesbutnogames.com" class="bi bi-controller"><div id="more-games-text"></div></a>
         <div id="title"><h1>Tic Tac Onion</h1><img id="onions" src="onions.svg"/></div>
-        <div id="how-to-play" class="bi bi-question-circle"></div>
+        <div id="how-to-play" class="bi bi-question-circle" onclick="openHelp()"></div>
     </div>
 
 
