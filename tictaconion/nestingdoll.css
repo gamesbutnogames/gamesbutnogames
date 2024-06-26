@@ -74,9 +74,14 @@ body {
     align-items: center;
     justify-content: baseline;
     width: 75%;
-    height: 75%;
+    height: 90%;
     background-color: #f2e3f3;
     border: 5px solid black;
+    font-size: 18px;
+    gap: 20px;
+    padding: 10px;
+    text-align: center;
+
 }
 
 .close {
@@ -281,6 +286,32 @@ body {
     filter: brightness(80%);
 }
 
+#help {
+    font-size: 16px;
+
+}
+
+.help-image-line {
+    width: 200px; 
+    border: 10px solid;
+}
+
+.help-image-onion {
+    width: 100px;
+}
+
+#privacy-policy {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    color: darkblue;
+}
 
 @media only screen and (max-width: 800px) {
     #game {
@@ -330,6 +361,37 @@ body {
 
     #restart {
         font-size: 25px;
+    }
+
+    .popup {
+        font-size: 14px;
+        gap: 10px;
+    }
+
+    #help-title {
+        font-size: 20px;
+    }
+
+    .help-image-line {
+        width: 80px; 
+    }
+
+    .help-image-onion {
+        width: 50px;
+    }
+
+    #privacy-policy {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+        margin-bottom: 10px;
+        margin-top: 10px;
+        color: darkblue;
+        font-size: 10px;
     }
 
 }
