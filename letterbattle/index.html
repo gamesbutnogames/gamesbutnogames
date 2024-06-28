@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+
+    <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-CG2RCX8YXV"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-CG2RCX8YXV');
+    </script> -->
+<!-- 
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="canonical" href="https://gamesbutnogames.com/tictaconion/" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Funny tic tac toe variant. Play this free and interesting noughts and crosses game online">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Tic-Tac-Onion">
+    <meta property="og:url" content="https://gamesbutnogames.com/tictaconion/">
+    <meta property="og:description" content="Funny Tic-Tac-Toe Variant">
+    <meta property="og:image" content="https://gamesbutnogames.com/tictaconion.png"/>
+    <meta name="googlebot-news" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"> -->
+
+    <link rel="stylesheet" href="../allgames.css">
+    <link rel="stylesheet" href="letterbattle.css">
+
+    <script src="jquery.js" defer></script>
+    <script src="letterbattle.js" defer></script>
+    <title>Letter Battle</title>
+</head>
+
+<body>
+
+    <div id="help">
+
+        <div class="popup">
+
+        </div>
+
+    </div>
+
+    <div id="top-bar">
+        <a id="more-games" href="https://gamesbutnogames.com" class="bi bi-controller"><div id="more-games-text"></div></a>
+        <div id="title">Letter Battle</div>
+        <div id="how-to-play" class="bi bi-question-circle" onclick="openHelp()"></div>
+    </div>
+
+    <div id="game">
+
+        <div id="word"></div>
+        <div id="actions">
+            <div id="swap" class="bi bi-arrow-left-right action-button" onclick="swapPressed()"></div>
+            <div id="delete" class="bi bi-trash action-button" onclick="deletePressed()"></div>
+
+        </div>
+
+    </div>
+
+
+    <a href="../privacy" id="privacy-policy">Privacy Policy</a>
+
+
+</body>
+
+</html>
