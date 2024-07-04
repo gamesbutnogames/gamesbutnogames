@@ -1,3 +1,4 @@
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css");
 
 :root {
     --door-width:8em;
@@ -9,7 +10,7 @@ html {
 }
 
 body {
-  background-color: rgba(240, 235, 218, 0.877);
+  background-color: rgb(240, 235, 218);
   display: flex;
   flex-direction: column;
   gap: 0.5em;
@@ -17,7 +18,74 @@ body {
   /* justify-content: baseline; */
   height: 100%;
   overflow: hidden;
+  margin: 0;
 }
+
+
+#top-bar {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+#how-to-play {
+  font-size: 50px;
+  margin-right: 15px;
+}
+
+#help {
+  display: flex;
+  position: absolute;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.459);
+  z-index: 100;
+}
+
+#example {
+  width: 60%;
+  border: solid 5px black;
+}
+
+.popup {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: baseline;
+  width: 75%;
+  height: 90%;
+  background-color: rgb(240, 235, 218);
+  border: 5px solid black;
+  font-size: 18px;
+  gap: 20px;
+  padding: 10px;
+  text-align: center;
+
+}
+
+.close {
+  font-size: 60px;
+  align-self: flex-end;
+  margin-right: 5px;
+}
+
+#more-games {
+  font-size: 50px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: black;
+  gap: 10px;
+  margin-left: 15px;
+}
+
 
 #game {
   display: flex;
@@ -261,6 +329,26 @@ body {
 
   .door-number-used {
     font-size: 2em;
+  }
+
+  #how-to-play {
+    font-size: 35px;
+  }
+  #more-games {
+      font-size: 40px;
+  }
+
+  .popup {
+    font-size: 14px;
+    gap: 10px;
+  }
+
+  #help-title {
+    font-size: 20px;
+  }
+
+  #example {
+    width: 90%;
   }
 
 }

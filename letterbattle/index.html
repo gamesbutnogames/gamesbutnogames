@@ -30,6 +30,7 @@
     <link rel="stylesheet" href="letterbattle.css">
 
     <script src="jquery.js" defer></script>
+    <script src="words.js" defer></script>
     <script src="letterbattle.js" defer></script>
     <title>Letter Battle</title>
 </head>
@@ -52,10 +53,12 @@
 
     <div id="game">
 
+        <div id="readout">Player 1</div>
+
         <div id="word"></div>
         <div id="actions">
-            <div id="swap" class="bi bi-arrow-left-right action-button" onclick="swapPressed()"></div>
-            <div id="delete" class="bi bi-trash action-button" onclick="deletePressed()"></div>
+            <div id="swap" class="bi bi-arrow-left-right action-button" onclick="toggleSwap()"></div>
+            <div id="remove" class="bi bi-trash action-button" onclick="toggleRemove()"></div>
 
         </div>
 

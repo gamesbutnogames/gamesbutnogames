@@ -220,3 +220,15 @@ function restart() {
 }
 
 $("#gameover").css("display", "none");
+
+
+function openHelp() {
+  $("#help").show()
+}
+
+function closeHelp() {
+  $("#help").hide()
+}
+
+$("#end-game").hide()
+$("#help").hide()

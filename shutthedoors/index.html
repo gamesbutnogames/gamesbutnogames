@@ -35,9 +35,27 @@
 
 <body>
 
-    <a id="home" href="https://gamesbutnogames.com"><img id="home-bacon" src="../bacon.png"/>Games But <br> No Games</a>
+    <div id="help">
 
-    <h1 id="title">Shut The Doors</h1>
+        <div class="popup">
+            <div class="close bi bi-x" onclick="closeHelp()"></div>
+            <h1 id="help-title">How To Play</h1>
+            <div>Shut all of the doors to win</div>
+            <div>Roll the dice by clicking on them, you may close one or two doors which add up to the sum of the dice</div>
+            <div>Example:</div>
+            <img src="example.png" id="example"/>
+        </div>
+
+    </div>
+
+    <div id="top-bar">
+        <a id="more-games" href="https://gamesbutnogames.com" class="bi bi-controller"><div id="more-games-text"></div></a>
+        <h1 id="title">Shut The Doors</h1>
+        <div id="how-to-play" class="bi bi-question-circle" onclick="openHelp()"></div>
+    </div>
+
+    <!-- <a id="home" href="https://gamesbutnogames.com"><img id="home-bacon" src="../bacon.png"/>Games But <br> No Games</a> -->
+
 
     <!-- <div id="game"> -->
 
