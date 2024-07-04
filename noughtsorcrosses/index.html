@@ -38,10 +38,36 @@
 
 <body>
 
-    <a id="home" href="https://gamesbutnogames.com"><img id="home-bacon" src="../bacon.png"/>Games But <br> No Games</a>
+    <div id="help">
+
+        <div class="popup">
+            <div class="close bi bi-x" onclick="closeHelp()"></div>
+            <h1 id="help-title">How To Play</h1>
+            <div>Rather than place down pieces, halves are placed down</div>
+            <div class="win-icon"><img class="win-icon-piece" src="piece-red.svg" /></div>
+            <div>Halves can be flipped before being placed down</div>
+            <div>Two halves when placed next to each other may make a nought or a cross</div>
+            <div style="display: flex; flex-direction: row; gap: 20px; flex-wrap: wrap; align-items: center; justify-content: center;">
+                <div class="win-icon"><img class="win-icon-piece" src="piece-red.svg" style="transform: scaleX(-1);" /><img class="win-icon-piece" src="piece-red.svg" /></div>
+                <div class="win-icon"><img class="win-icon-piece" src="piece-black.svg" /><img class="win-icon-piece" src="piece-black.svg" style="transform: scaleX(-1);" /></div>
+                <div class="win-icon"><img class="win-icon-piece" src="piece-black.svg" style="transform: scaleX(-1);" /><img class="win-icon-piece" src="piece-red.svg" /></div>
+                <div class="win-icon"><img class="win-icon-piece" src="piece-black.svg" /><img class="win-icon-piece" src="piece-red.svg" style="transform: scaleX(-1);" /></div>
+            </div>
+            <div>After all spaces on the board are filled, take turns flipping pieces already on the board</div>
+            <div>Either player can attempt to make crosses or noughts, the colours of the pieces just show whose turn it is</div>
+            <div>Make a line of four full pieces without your opponent making one to win</div>
 
 
-    <h1>Noughts Or Crosses</h1>
+
+        </div>
+
+    </div>
+
+    <div id="top-bar">
+        <a id="more-games" href="https://gamesbutnogames.com" class="bi bi-controller"><div id="more-games-text"></div></a>
+        <h1 id="title">Noughts Or Crosses</h1>
+        <div id="how-to-play" class="bi bi-question-circle" onclick="openHelp()"></div>
+    </div>
 
 
     <div id="game">
@@ -51,6 +77,12 @@
             <div id="next-piece-square"></div>
             <div id="flip" class="bi bi-arrow-left-right" onclick="nextPieceFlip()"></div>
         </div>
+
+    </div>
+
+    <div id="message">
+
+        Click on pieces to flip them
 
     </div>
 
@@ -64,6 +96,9 @@
     </div>
 
     <div id="restart" onclick="restart()">Restart</div>
+
+    <a href="../privacy" id="privacy-policy">Privacy Policy</a>
+
 
 
 

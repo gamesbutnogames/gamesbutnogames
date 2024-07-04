@@ -5,6 +5,10 @@
     --door-height:12em;
   }
 
+* {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
 html {
   height: 100%;
 }
@@ -72,6 +76,19 @@ body {
   font-size: 60px;
   align-self: flex-end;
   margin-right: 5px;
+}
+
+#privacy-policy {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  color: darkblue;
 }
 
 #more-games {
@@ -350,5 +367,19 @@ body {
   #example {
     width: 90%;
   }
+
+  #privacy-policy {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    color: darkblue;
+    font-size: 10px;
+}
 
 }

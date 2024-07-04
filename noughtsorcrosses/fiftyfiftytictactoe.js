@@ -148,6 +148,10 @@ function nextTurn() {
     updatePairs()
     checkForWin()
 
+    if (!gameStarted) {
+        return
+    }
+
     if (currentColour === "red") {
         currentColour = "black"
     } else {
@@ -165,6 +169,9 @@ function nextTurn() {
     if (count >= 18) {
         $("#next-piece").hide()
         canFlip = true
+        if (gameStarted) {
+            $("#message").show()
+        }
     } else if (!nextPiece) {
         createNextPiece()
     }
@@ -347,8 +354,12 @@ function endGame(winner) {
 
     gameStarted = false
 
-    if (nextPiece)
+    if (nextPiece) {
         nextPiece.remove()
+        nextPiece.hide()
+    }
+
+    $("#message").hide()
     $("#next-piece").hide()
     $("#win-message").show()
     $(`#win-${winner}`).show()
@@ -369,6 +380,7 @@ function restart() {
     $(`#win-circle`).hide()
     $(`#win-message`).hide()
     $(`#restart`).hide()
+    $("#message").hide()
 
     $("#next-piece").show()
 
@@ -399,6 +411,19 @@ $(`#win-cross`).hide()
 $(`#win-circle`).hide()
 $(`#win-message`).hide()
 $(`#restart`).hide()
+$("#message").hide()
+
+
+function openHelp() {
+    $("#help").show()
+  }
+  
+  function closeHelp() {
+    $("#help").hide()
+  }
+  
+  $("#end-game").hide()
+  $("#help").hide()
 
 
 
