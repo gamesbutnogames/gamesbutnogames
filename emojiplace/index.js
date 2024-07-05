@@ -1,5 +1,5 @@
 // var socket = new WebSocket("ws://"+location.host)
-var socket = new WebSocket("ws://"+"178.79.138.145")
+var socket = new WebSocket("wss://"+"178.79.138.145")
 
 
 socket.sendData = (data) => {
