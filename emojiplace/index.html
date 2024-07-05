@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+
+
+    <script src="jquery.js" defer></script>
+    <script type="module" src="https://cdn.jsdelivr.net/npm/emoji-picker-element@^1/index.js"></script>
+    <script src="index.js" defer></script>
+
+
+    <link rel="stylesheet" href="index.css">
+
+</head>
+
+<body>
+
+    <div id="home-view" class="view">
+
+        <div id="title">Welcome to Emoji Place</div>
+
+        <div id="sections">
+
+        </div>
+
+    </div>
+
+
+    <div id="section-view" class="view">
+
+        <div id="home" class="bi bi-house-fill" onclick="homeClicked()"></div>
+
+        <div id="change-emoji" onclick="changeEmojiClicked()">Change Emoji<div id="selected">😀</div></div>
+
+        <div id="picker">
+            <emoji-picker></emoji-picker>
+        </div>
+
+        <div id="grid"></div>
+
+    </div>
+
+
+</body>
+
+</html>
