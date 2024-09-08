@@ -35,6 +35,12 @@ const gameData = [{
     image: "noughtssquared.png",
     description: "Tic Tac Toe, now in 3D!",
     rules: "Win noughts and crosses. Then do it again. Then do it again. Win noughts and crosses with your noughts and crosses."
+}, {
+    title: "Truth Sweeper",
+    url: "https://truthsweeper.com",
+    image: "http://truthsweeper.com/favicon.png",
+    description: "A trivia game for stupid people",
+    rules: "Sweep for the truth"
 }]
 
 var selectedElement
